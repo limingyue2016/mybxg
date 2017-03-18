@@ -10,7 +10,9 @@ if(array_key_exists('PATH_INFO',$_SERVER)){
 	if(count($pathinfo) == 2) {
 		$path = $pathinfo[0];
 		$filename = $pathinfo[1];
-	}
+	}else{
+                 $filename = 'login';
+             }
 
 }
 else{

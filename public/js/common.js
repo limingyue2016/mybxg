@@ -11,7 +11,7 @@ define(['jquery','cookie'],function($){
 	var flag = $.cookie('PHPSESSID');
 	if(!flag && pathname.indexOf('login') == -1){
 		// 没有登录
-		location.href = '/index/login'
+		location.href = '/login'
 	}
 	// 实现登录功能
 	$('#loginForm').submit(function(){
@@ -45,7 +45,7 @@ define(['jquery','cookie'],function($){
 			dataType:"json",
 			success: function (data) {
 				if(data.code ==200){
-					location.href="/index/login"
+					location.href="/login"
 				}
 
 			}
