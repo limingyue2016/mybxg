@@ -52,8 +52,6 @@ define(['jquery','cookie'],function($){
 
 		})
 	})
-
-
 	// 渲染登录信息
 	var obj = JSON.parse($.cookie('logInfo'));
 	$('.aside .profile img').attr('src',obj.tc_avatar);
