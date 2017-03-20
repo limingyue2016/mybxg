@@ -18,5 +18,5 @@ if(array_key_exists('PATH_INFO',$_SERVER)){
 else{
         $filename = 'login';
     }
-include './views/' . $path . '/' . $filename . '.html';
+include ('./views/' . $path . '/' . $filename . '.html');
 

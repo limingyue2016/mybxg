@@ -1,6 +1,7 @@
 
 define(['jquery','cookie'],function($){
 
+
 	// 控制左侧导航菜单的显示和隐藏
 	$('.navs ul').prev('a').on('click', function () {
 		$(this).next().slideToggle();
