@@ -1,5 +1,5 @@
 
-define(['jquery','cookie'],function($){
+define(['jquery',"template",'cookie'],function($,template){
 
 
 	// 控制左侧导航菜单的显示和隐藏
@@ -53,9 +53,15 @@ define(['jquery','cookie'],function($){
 
 		})
 	})
-	// 渲染登录信息
-	var obj = JSON.parse($.cookie('logInfo'));
-	$('.aside .profile img').attr('src',obj.tc_avatar);
-	$('.aside .profile h4').html(obj.tc_name);
+	// 渲染登录信息(不在登录页才渲染)
+	var pathname=location.pathname;
+	if(pathname.indexOf("login")==-1){
+		var obj = JSON.parse($.cookie('logInfo'));
+		//$('.aside .profile img').attr('src',obj.tc_avatar);
+		//$('.aside .profile h4').html(obj.tc_name);
+		var html=template("logInfo",obj)
+		$('.aside .profile').html(html);
+	}
+
 
 });
