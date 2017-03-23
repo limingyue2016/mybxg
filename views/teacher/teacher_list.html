@@ -25,7 +25,7 @@
                     <li class="active">讲师列表</li>
                 </ol>
                 <div class="page-title">
-                    <a href="./teacher_add.html" class="btn btn-success btn-sm pull-right">添加讲师</a>
+                    <a href="/teacher/teacher_add" class="btn btn-success btn-sm pull-right">添加讲师</a>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -141,7 +141,7 @@
             <td>{{item.tc_cellphone}}</td>
             <td class="teacherBtns" data-tcid = "{{item.tc_id}}" data-status='{{item.tc_status}}'>
                 <a href="javascript:;"  class="btn btn-info btn-xs">查 看</a>
-                <a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>
+                <a href="/teacher/teacher_add?tc_id={{item.tc_id}}" class="btn btn-info btn-xs">编 辑</a>
                 <a href="javascript:;" class="btn btn-warning btn-xs">注 销</a>
             </td>
         </tr>

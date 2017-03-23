@@ -8,21 +8,23 @@ define(['jquery',"template",'cookie'],function($,template){
 	});
 
 	// 没有登录的时候跳转到登录页面
-	var pathname = location.pathname;
-	var flag = $.cookie('PHPSESSID');
-	if(!flag && pathname.indexOf('login') == -1){
-		// 没有登录
-		location.href = '/login'
-	}
+	//var pathname = location.pathname;
+	//var flag = $.cookie('PHPSESSID');
+	//if(!flag && pathname.indexOf('login') == -1){
+	//	// 没有登录
+	//	location.href = '/login'
+	//}
 	// 实现登录功能
 	$('#loginForm').submit(function(){
 		var formData = $(this).serialize();
 		$.ajax({
 			type : 'post',
+			// url : 'http://api.studyit.com/login'
 			url : '/api/login',
 			data : formData,
 			dataType : 'json',
 			success : function(data){
+				console.log(2);
 				if(data.code == 200){
 					// console.log(data.result);
 					var logInfo = JSON.stringify(data.result);
@@ -32,7 +34,7 @@ define(['jquery',"template",'cookie'],function($,template){
 				}
 			},
 			error : function(data){
-				console.log(data.responseText);
+				console.log("错误");
 			}
 		});
 		return false;//阻止默认行为

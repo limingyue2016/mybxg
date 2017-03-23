@@ -9,12 +9,12 @@ if(array_key_exists('PATH_INFO',$_SERVER)){
 		$path = $pathinfo[0];
 		$filename = $pathinfo[1];
 	}else{
-                 $filename = 'login';
-             }
+                $filename = 'login';
+           }
 
 }
 else{
         $filename = 'login';
-    }
+   }
 include ('./views/' . $path . '/' . $filename . '.html');
 
