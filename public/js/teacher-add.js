@@ -3,6 +3,8 @@
  */
 //添加讲师
 define(["jquery","util","template","datepicker","language",'validate','form'], function ($,util,template) {
+    util.setMenu('/teacher/teacher_add');
+
 //    编辑讲师
     var tc_id=util.qs("tc_id");
     if(tc_id){
@@ -44,7 +46,6 @@ define(["jquery","util","template","datepicker","language",'validate','form'], f
                    dataType:"json",
                    success: function (data) {
                        if(data.code==200){
-                           //console.log(2);
                            location.href="/teacher/teacher_list"
                        }
                    }

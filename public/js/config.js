@@ -18,7 +18,8 @@ require.config({
         form : 'jquery-form/jquery.form',
         region : 'jquery-region/jquery.region',
         uploadify : 'uploadify/jquery.uploadify',
-        ckeditor : 'ckeditor/ckeditor'
+        ckeditor : 'ckeditor/ckeditor',
+        jcrop : 'jcrop/Jcrop'
     },
     shim:{
         bootstrap:{
@@ -36,6 +37,9 @@ require.config({
         ckeditor:{
             deps:["jquery"],
             exports:"CKEDITOR"
+        },
+        jcrop:{
+            deps:["jquery"]
         }
     }
 })
